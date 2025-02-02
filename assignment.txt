@@ -1,0 +1,12 @@
+1. this is the command for creating file: touch [name of file]
+2. what is git and github? git is a version control system that help programmer track changes in their code base over time,used for collaboration and code management.Github is a web-based platform for hosting and managin git repositories.
+3. what is CLI? CLI stands for Comand-Line Interface.It is a way to interact with computer or software application using commands typed on keyboard.
+4. To see the diractory you are currently in we use the command[pwd]
+5. The command to move into a different directory is:[cd then directory name]
+6. The command to list the content of a directory is: ls
+7. The command to list content of directory including the hidden ones is: ls -a
+8. The command to initialize git in a directory is: git init
+9. The command to clone a repository is: git clone [repository url]
+10. The command to push a git file is: fisrt do git add . then do[git commit -m comment] then git push
+11. github is like a subset or a tool of git. Github is a web-based platform where repositories are hosted and managed for git. Github is like one of the services git renders
+12. Command to configure my git is: git config --global user.name "Your Name"
