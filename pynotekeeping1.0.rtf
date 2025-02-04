@@ -1,0 +1,295 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 Python Boolean and Conditional Programming: if.. else\par
+June 8, 2022\par
+Besides numbers and strings, Python has several other types of data. One of them is the Boolean data type. Booleans are extremely simple: they are either true or false. Booleans, in combination with Boolean operators, make it possible to create conditional programs: programs that decide to do different things, based on certain conditions.\par
+\par
+The Boolean data type was named after George Boole, the man that defined an algebraic system of logic in the mid 19th century.\par
+\par
+What is a Boolean?\par
+Let\rquote s start with a definition:\par
+\par
+Boolean\par
+A boolean is the simplest data type; it\rquote s either True or False.\par
+In computer science, booleans are used a lot. This has to do with how computers work internally. Many operations inside a computer come down to a simple \ldblquote true or false.\rdblquote  It\rquote s important to note, that in Python a Boolean value starts with an upper-case letter: True or False. This is in contrast to most other programming languages, where lower-case is the norm.\par
+\par
+In Python, we use booleans in combination with conditional statements to control the flow of a program:\par
+\par
+>>> door_is_locked = True\par
+>>> if door_is_locked:\par
+...     print("Mum, open the door!")\par
+...\par
+Mum, open the door!\par
+>>>_\par
+An if can be followed by an optional else block. This block is executed only when the expression evaluates to False. This way, you can run code for both options. Let\rquote s try this:\par
+\par
+>>> door_is_locked = False\par
+>>> if door_is_locked:\par
+...     print("Mum, open the door!")\par
+... else:\par
+...     print("Let's go inside")\par
+...\par
+Let's go inside\par
+>>>_\par
+Thanks to our else-block, we can now print an alternative text if door_is_locked is False. As an exercise, try to modify the interactive code example above to get the same result.\par
+An if can be followed by an optional else block. This block is executed only when the expression evaluates to False. This way, you can run code for both options. Let\rquote s try this:\par
+\par
+>>> door_is_locked = False\par
+>>> if door_is_locked:\par
+...     print("Mum, open the door!")\par
+... else:\par
+...     print("Let's go inside")\par
+...\par
+Let's go inside\par
+>>>_\par
+Thanks to our else-block, we can now print an alternative text if door_is_locked is False. As an exercise, try to modify the interactive code example above to get the same result.\par
+Python operators\par
+The ability to use conditions is what makes computers tick; they make your software smart and allow it to change its behavior based on external input. We\rquote ve used True directly so far, but more expressions evaluate to either True or False. These expressions often include a so-called operator.\par
+\par
+There are multiple types of operators, and for now, we\rquote ll only look at these:\par
+\par
+Comparison operators: they compare two values to each other\par
+Logical operators\par
+\par
+Comparison operators\par
+Let\rquote s look at comparison operators first. You can play around with them in the REPL:\par
+\par
+>>> 2 > 1\par
+True\par
+>>> 2 < 1\par
+False\par
+>>> 2 < 3 < 4 < 5 < 6\par
+True\par
+>>> 2 < 3 > 2\par
+True\par
+>>> 3 <= 3\par
+True\par
+>>> 3 >= 2\par
+True\par
+>>> 2 == 2\par
+True\par
+>>> 4 != 5\par
+True\par
+>>> 'a' == 'a'\par
+True\par
+>>> 'a' > 'b'\par
+False\par
+As can be seen in the examples, these operators work on strings too. Strings are compared in the order of the alphabet, with these added rules:\par
+\par
+Uppercase letters are \lquote smaller\rquote  than lowercase letters, e.g.: \lquote M\rquote  < \lquote m\rquote\par
+Digits are smaller than letters: \lquote 1\rquote  < \lquote a\rquote\par
+You\rquote re probably wondering what the logic is behind these rules. Internally, each character has a number in a table. The position in this table determines the order. It\rquote s as simple as that. See Unicode on Wikipedia to learn more about it if you\rquote re interested.\par
+Logical operators\par
+Next up: logical operators. These operators only work on booleans and are used to implement logic. The following table lists and describes them:\par
+\par
+Operator\tab What is does\tab Examples\par
+and\tab True if both statements are true\tab True and False == False\par
+False and False == False\par
+True and True == True\par
+or\tab True if one of the statements is true\tab True or False == True\par
+True or True == True\par
+False or False == False\par
+not\tab Negates the statement that follows\tab not True == False\par
+not False == True\par
+Comparing different types in Python\par
+When you try to compare different types, you\rquote ll often get an error. Let\rquote s say you want to compare an integer with a string:\par
+\par
+>>> 1 < 'a'\par
+Traceback (most recent call last):\par
+  File "<stdin>", line 1, in <module>\par
+TypeError: '<' not supported between instances of 'int' and 'str'\par
+>>>\par
+This is how Python tells you it can\rquote t compare integers to strings. But there are types that can mix and match. I would recommend against it because it makes your code hard to understand, but for sake of demonstration, let\rquote s compare a boolean and an int:\par
+True + True = 2\par
+False + False = 0\par
+True == 1\par
+True. \par
+Python For Loop and While Loop\par
+June 5, 2022\par
+We learned how we can change the flow of our program with the conditional statements if and else. Another way to control the flow is by using a Python for-loop or a Python while-loop. Loops, in essence, allow you to repeat a piece of code.\par
+Python For-loop\par
+There are two ways to create a loop in Python. Let\rquote s first look at Python\rquote s for-loop. A for-loop iterates over the individual elements of the object you feed it. If that sounds difficult, an example will hopefully clarify this:\par
+\par
+>>> for letter in 'Hello':\par
+...     print(letter)\par
+... \par
+H\par
+e\par
+l\par
+l\par
+o\par
+We stumbled upon two concepts here that need an explanation: iterability and objects.\par
+\par
+Iterable\par
+An iterable is an object in Python that can return its members one at a time.\par
+As you can see in the example code, a string of text is iterable. Most of Python\rquote s data types are iterable in some way or another. If you want to know all the nitty-gritty details, head over to the page about iterators. If you\rquote re new to programming, I suggest you keep reading here and save iterators for later.\par
+\par
+The next thing we need to tackle: objects. This is a big subject, and it has its own chapter in this tutorial: Python classes and objects. You don\rquote t need to learn about it now to understand Python for-loops. It\rquote s enough to know that everything in Python is an object, and objects have a certain type and certain properties. Being iterable is one of those properties.\par
+The general template for a for-loop in Python is:\par
+\par
+for <variable> in <iterable>:\par
+    ... do something with variable\par
+On each iteration, an element from iterable is assigned to variable. This variable exists and can be used only inside the loop. Once there is nothing more left, the loop stops and the program continues with the next lines of code.\par
+\par
+we create lists with block quotes.\par
+Its contents are objects of whatever type you like, separated by commas, and they don\rquote t need to be of the same type.\par
+We can access the individual elements of a list manually too.\par
+A list can contain all the types we\rquote ve seen so far: numbers, strings, booleans, and even other lists. Indeed, you can create a list of lists if you want! As you can see in the interactive example, we can also access individual elements of a list. Remember that in computer science, we start counting from 0. So mylist[0] gives us the first element, and mylist[1] the second, etcetera.\par
+\par
+Here are a couple of things you can try in a REPL or in the interactive code example above:\par
+\par
+>>> mylist = [1, 2, 'Hello', ['a', 'b'] ]\par
+>>> mylist[0]\par
+1\par
+>>> mylist[0] + mylist[1]\par
+3\par
+>>> mylist[2]\par
+'Hello'\par
+>>> mylist[3][0]\par
+'a'\par
+Python While-loop\par
+While the for-loop in Python is a bit hard to understand, because of new concepts like iterability and objects, the while loop is actually much simpler! Its template looks like this:\par
+\par
+while <expression evaluates to True>:\par
+    do something\par
+You should read this as: \ldblquote while this expression evaluates to True, keep doing the stuff below\rdblquote .\par
+\par
+Let\rquote s take a look at an actual example:\par
+\par
+>>> i = 1\par
+>>> while i <= 4:\par
+...     print(i)\par
+...     i = i + 1\par
+... \par
+1\par
+2\par
+3\par
+4\par
+We see an expression that follows the while statement: i <= 4. As long as this expression evaluates to True, the block inside of the while-loop executes repeatedly.\par
+\par
+What is a function in Python?\par
+Let\rquote s define what a function is, exactly:\par
+\par
+Function\par
+A Python function is a named section of a program that performs a specific task and, optionally, returns a value\par
+Functions are the real building blocks of any programming language. We define a Python function with the def keyword. But before we start doing so, let\rquote s first go over the advantages of functions, and let\rquote s look at some built-in functions that you might already know.\par
+Advantages of using functions\par
+Code reuse\par
+A Python function can be defined once and used many times. So it aids in code reuse: you don\rquote t want to write the same code more than once.\par
+\par
+Functions are a great way to keep your code short, concise, and readable. By giving a function a well-chosen name, your code will become even more readable because the function name directly explains what will happen. This way, others (or future you) can read your code, and without looking at all of it, understand what it\rquote s doing anyway because of the well-chosen function names.\par
+\par
+Other forms of code reuse are explained later on. E.g., you can also group code into modules and packages.\par
+\par
+Parameters\par
+Functions accept a parameter, and you\rquote ll see how this works in a moment. The big advantage here, is that you can alter the function\rquote s behavior by changing the parameter.\par
+\par
+Return values\par
+A function can return a value. This value is often the result of some calculation or operation. In fact, a Python function can even return multiple values.\par
+\par
+Built-in Python functions\par
+Before we start defining functions ourselves, we\rquote ll look at some of Python\rquote s built-in functions. Let\rquote s start with the most well-known built-in function, called print:\par
+\par
+>>> print('Hello, readers!')\par
+Hello, readers!\par
+>>> print(15)\par
+15\par
+Print takes an argument and prints it to the screen.\par
+\par
+As stated in our definition, functions can optionally return a value. However, print does not return anything. Because it prints something to the screen, it might look like it does, but it doesn\rquote t. We can check this by assigning the result of a print statement to a Python variable:\par
+>>> result = print('Hello')\par
+Hello\par
+>>> print(result)\par
+None\par
+None is a special type of value in Python, basically meaning \lquote nothing.\rquote\par
+\par
+Another built-in function that does return a value is len(). It returns the length of whatever you feed it:\par
+\par
+>>> mylength = len('Hello')\par
+>>> print(mylength)\par
+5\par
+Creating a Python function\par
+Now that we know how to use a function, let\rquote s create a simple one ourselves. To do so, we use Python\rquote s def keyword:\par
+\par
+>>> def say_hi():\par
+...     print('Hi!')\par
+...\par
+>>> say_hi()\par
+Hi!\par
+It\rquote s just a few lines, but a lot is going on. Let\rquote s dissect this:\par
+\par
+First, we see the keyword def, which is Python\rquote s keyword to define a function.\par
+Next comes our function name, say_hi.\par
+Then we encounter two parentheses, (), which indicate that this function does not accept any parameters (unlike print and len).\par
+We end the line with a colon (:)\par
+And finally, we bump into a feature that sets Python apart from many other programming languages: indentation.\par
+Python function parameters and arguments\par
+We can make this more interesting by allowing an argument to be passed to our function. Again we define a function with def, but we add a variable name between the parentheses:\par
+\par
+>>> def say_hi(name):\par
+...     print('Hi', name)\par
+...\par
+>>> say_hi('Erik')\par
+Hi Erik\par
+Our function now accepts a value, which gets assigned to the variable name. We call such variables the parameter, while the actual value we provide (\lquote Erik\rquote ) is called the argument.\par
+\par
+Parameters and arguments\par
+A Python function can have parameters. The values we pass through these parameters are called arguments.\par
+As you can see, print() accepts multiple arguments, separated by a comma. This allows us to print both \lquote hi\rquote  and the provided name. For our convenience, print() automatically puts a space between the two strings.\par
+Empty return statement\par
+If your function does not return anything, but you still want to return from the function, you can use an empty return statement. Here\rquote s a silly example that uses the startswith() method of a string. This method checks if the string starts with the given string:\par
+\par
+def optional_greeter(name):\par
+    if name.startswith('X'):\par
+        # We don't greet people with weird names :p\par
+        return\par
+    \par
+    print('Hi there, ', name)\par
+optional_greeter('Xander')\par
+This is an interesting pattern; I call it returning early. I\rquote d like to return early because the alternative is using blocks of if\'85 else statements:\par
+\par
+def optional_greeter(name):\par
+    if name.startswith('X'):\par
+        # We don't greet people with weird names :p\par
+        pass\par
+    else:\par
+        print('Hi there, ', name)\par
+optional_greeter('Xander')\par
+Which one do you feel looks cleaner? I\rquote d say the first because it requires less indented code. And although the difference is small with such a small example, this starts to add up when you have bigger chunks of code.\par
+Variable scope\par
+The variable name only exists inside our function. We say that the variable\rquote s scope name is limited to the function say_hi, meaning it doesn\rquote t exist outside of it.\par
+\par
+Scope\par
+The visibility of a variable is called scope. The scope defines which parts of your program can see and use a variable.\par
+If we define a variable at the so-called top level of a program, it is visible in all places.\par
+\par
+Let\rquote s demonstrate this:\par
+\par
+>>> def say_hi():\par
+...    print("Hi", name)\par
+...    answer = "Hi"\par
+...\par
+>>> name = 'Erik'\par
+>>> say_hi()\par
+Hi Erik\par
+>>> print(answer)\par
+Traceback (most recent call last):\par
+  File "<stdin>", line 1, in <module>\par
+NameError: name 'answer' is not defined\par
+say_hi was able to use the variable name, as expected, because it\rquote s a top-level variable: it is visible everywhere. However, answer, defined inside say_hi, is not known outside of the function and causes a NameError. Python gives us an informative and detailed error: \ldblquote name \lquote answer\rquote  is not defined.\rdblquote\par
+Default values and named parameters\par
+A compelling Python feature is the ability to provide default values for the parameters:\par
+\par
+>>> def welcome(name='learner', location='this tutorial'):\par
+...     print("Hi", name, "welcome to", location)\par
+...\par
+>>> welcome()\par
+Hi learner welcome to this tutorial\par
+>>> welcome(name='John')\par
+Hi John welcome to this tutorial\par
+>>> welcome(location='this epic tutorial')\par
+Hi learner welcome to this epic tutorial\par
+>>> welcome(name='John', location='this epic tutorial')\par
+Hi John welcome to this epic tutorial\par
+}
+ 
